@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-   
-</head>
-<body>
-    
-</body>
+  <head>
+    <script src="../../../../libs/react.development.js"></script>
+    <script src="../../../../libs/react-dom.development.js"></script>
+    <script src="../../../../libs/babel-standalone.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      const appEl = document.querySelector("#app");
+      const root = ReactDOM.createRoot(appEl);
+      // React18x以降の推奨の書き方;
+      root.render(<h1>こんにちは</h1>);
+
+      // React18x以前の書き方（今は非推奨）
+      // ReactDOM.render(<h1>こんにちは</h1>, appEl);
+    </script>
+  </body>
 </html>
