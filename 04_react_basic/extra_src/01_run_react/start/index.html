@@ -10,8 +10,16 @@
     <script type="text/babel">
       const appEl = document.querySelector("#app");
       const root = ReactDOM.createRoot(appEl);
+      const Example = () => {
+        // returnの戻り値が複数行になる場合は（）をつける
+        return (
+          <div>
+            <h1>Hello Components</h1>
+          </div>
+        );
+      };
       // React18x以降の推奨の書き方;
-      root.render(<h1>こんにちは</h1>);
+      root.render(<Example />);
 
       // React18x以前の書き方（今は非推奨）
       // ReactDOM.render(<h1>こんにちは</h1>, appEl);
