@@ -5,9 +5,17 @@
 
 import "./Child.css";
 
-const Child = () => {
+// 基本的な書き方
+// const Child = ({ color }) => {
+// 初期値を設定する書き方
+// const Child = ({ color = "green" }) => {
+// プロパティに名前をつける書き方
+const Child = ({ color: c = "green" }) => {
   return (
-    <div className="component">
+    // propsの基本的な使い方
+    // <div className={`component ${color}`}>
+    // プロパティに名前をつけた場合のpropsの使い方
+    <div className={`component ${c}`}>
       <h3>Hello Component</h3>
     </div>
   );
