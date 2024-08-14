@@ -1,3 +1,4 @@
+// POINT useReducerの練習問題
 import { useReducer } from "react";
 
 const CALC_OPTIONS = ["add", "minus", "divide", "multiply"];
@@ -8,7 +9,7 @@ const reducer = (state, { type, payload }) => {
       const { name, value } = payload;
       return { ...state, [name]: value };
     }
-
+    // inputのvalueの値がJavaScriptに渡される際に文字列になるため数値に変換
     case "add": {
       return { ...state, result: Number(state.a) + Number(state.b) };
     }
@@ -36,20 +37,16 @@ const Example = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   const calculate = (e) => {
-    dispatch({ value: e.target.value });
+    dispatch({ type: e.target.value });
   };
-
   const numChangeHandler = (e) => {
     dispatch({
       type: "change",
       payload: { name: e.target.name, value: e.target.value },
     });
   };
-
   return (
     <>
-      <h3>練習問題</h3>
-      <p>useReducerを使って完成コードと同じ機能を作成してください。</p>
       <div>
         a:
         <input
@@ -75,7 +72,7 @@ const Example = () => {
           </option>
         ))}
       </select>
-      <h1>結果：{state.result}</h1>
+      <h3>結果：{state.result}</h3>
     </>
   );
 };
