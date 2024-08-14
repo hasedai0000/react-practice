@@ -36,9 +36,7 @@ const Example = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   const calculate = (e) => {
-    dispatch({
-      value: e.target.value,
-    });
+    dispatch({ value: e.target.value });
   };
 
   const numChangeHandler = (e) => {
